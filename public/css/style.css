@@ -14,6 +14,16 @@ body {
   background-color: white;
 }
 
+.navbar {
+  z-index: 1050; /* Ensures the navbar stays above other elements */
+  position: relative; /* Keeps z-index effective */
+}
+
+.navbar-collapse {
+  background: white; /* Adds a background color to prevent merging */
+  z-index: 1100; /* Ensures dropdown appears above other elements */
+}
+
 .fa-compass {
   color: #fe424d;
   font-size: 2rem;
