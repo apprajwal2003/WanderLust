@@ -1,5 +1,8 @@
 <% layout("/layouts/boilerplate") %>
-
+<script>
+  const mapToken = '<%=process.env.MAP_TOKEN%>'
+  const coordinates = <%- JSON.stringify(list.geometry.coordinates)%>
+</script>
 <div class="row mt-3">
   <div class="col-8 offset-3">
     <h3><%= list.title %></h3>
@@ -142,15 +145,4 @@
     <div id="map"></div>
   </div>
 </div>
-
-<script>
-  let mapToken = '<%=process.env.MAP_TOKEN%>'
-  console.log(mapToken)
-  mapboxgl.accessToken = mapToken
-  const map = new mapboxgl.Map({
-    container: 'map', // Container ID
-    style: 'mapbox://styles/mapbox/streets-v12', // Style URL
-    center: [-74.5, 40], // Starting position [lng, lat]
-    zoom: 9 // Starting zoom level
-  })
-</script>
+<script src="/js/map.js "></script>
